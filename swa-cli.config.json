@@ -1,0 +1,15 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "Pixi-PWA": {
+      "appLocation": ".",
+      "outputLocation": "dist",
+      "appBuildCommand": "npm run build",
+      "run": "npm start",
+      "appDevserverUrl": "http://localhost:8081",
+      "projectName": "Pixi-PWA",
+      "appName": "pixi-ts-pwa-starter",
+      "resourceGroupName": "pixi-ts-pwa-starter-rg"
+    }
+  }
+}
