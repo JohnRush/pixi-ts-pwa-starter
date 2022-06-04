@@ -174,7 +174,7 @@ export class AppHome extends LitElement {
               </li>
             </ul>
           </fluent-card>
-
+          <fluent-anchor href="/pixi-text" appearance="accent">Navigate to PIXI</fluent-anchor>
           <fluent-anchor href="/about" appearance="accent">Navigate to About</fluent-anchor>
         </div>
 

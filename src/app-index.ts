@@ -68,6 +68,13 @@ export class AppIndex extends LitElement {
         children: [
           { path: '/', component: 'app-home' },
           {
+            path: '/pixi-text',
+            component: 'app-pixi-text',
+            action: async () => {
+              await import('./script/pages/app-pixi-text.js');
+            },
+          },
+          {
             path: '/about',
             component: 'app-about',
             action: async () => {
