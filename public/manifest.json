@@ -1,7 +1,7 @@
 {
   "id": "/",
   "scope": "/",
-  "name": "PWA PIXI App",
+  "name": "PWA Starter App",
   "display": "standalone",
   "start_url": "/",
   "short_name": "Pixi PWA",
@@ -40,6 +40,10 @@
       "type": "image/png"
     }
   ],
-  "features": ["Cross Platform"],
-  "categories": ["game"]
+  "features": [
+    "Cross Platform"
+  ],
+  "categories": [
+    "game"
+  ]
 }
