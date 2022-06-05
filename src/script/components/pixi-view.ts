@@ -3,6 +3,7 @@ import { LitElement, PropertyValueMap } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { handleResizeComplete } from "../../pixi/HandleResizeComplete";
 import { textDemo } from "../../pixi/TextDemo";
+import { spriteDemo } from "../../pixi/SpriteDemo";
 
 @customElement('pixi-view')
 export class PixiView extends LitElement {
@@ -86,6 +87,7 @@ const makeScene = (app: PIXI.Application, demo:(app: PIXI.Application, stage: PI
       scene = new PIXI.Container();
       app.stage.addChild(scene);
       demo(app, scene);
+      spriteDemo(app, scene);
     }
   }
   return updateScene;
