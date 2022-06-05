@@ -1,42 +1,14 @@
 import * as PIXI from "pixi.js";
-import { LitElement, css, PropertyValueMap } from 'lit';
+import { LitElement, PropertyValueMap } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { handleResizeComplete } from "../../pixi/HandleResizeComplete";
 import { textDemo } from "../../pixi/TextDemo";
-
-const stringToNumber = (value: string, fallback: number) => {
-  const num = parseFloat(value);
-  return Number.isNaN(num) ? fallback : num;
-}
-
-const makeScene = (app: PIXI.Application, demo:(app: PIXI.Application, stage: PIXI.Container)=>unknown) => {
-  let scene = new PIXI.Container();
-  const updateScene = () => {
-    if(app) {
-      if(scene) {
-        scene.destroy();
-      }
-      scene = new PIXI.Container();
-      app.stage.addChild(scene);
-      demo(app, scene);
-    }
-  }
-  return updateScene;
-}
 
 @customElement('pixi-view')
 export class PixiView extends LitElement {
   private app: PIXI.Application | undefined;
   private readonly resizeMonitor: ReturnType<typeof handleResizeComplete>;
   private scene: (()=>unknown)|undefined;
-
-  static get styles() {
-    return css`
-    #pixiTarget {
-      background-color:green;
-    }
-    `
-  }
 
   constructor() {
     super();
@@ -102,4 +74,24 @@ export class PixiView extends LitElement {
       this.app.destroy();
     }
   }
+}
+
+const makeScene = (app: PIXI.Application, demo:(app: PIXI.Application, stage: PIXI.Container)=>unknown) => {
+  let scene = new PIXI.Container();
+  const updateScene = () => {
+    if(app) {
+      if(scene) {
+        scene.destroy();
+      }
+      scene = new PIXI.Container();
+      app.stage.addChild(scene);
+      demo(app, scene);
+    }
+  }
+  return updateScene;
+}
+
+const stringToNumber = (value: string, fallback: number) => {
+  const num = parseFloat(value);
+  return Number.isNaN(num) ? fallback : num;
 }

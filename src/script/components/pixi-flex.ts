@@ -1,11 +1,11 @@
-import { LitElement, css, html, PropertyValueMap } from 'lit';
+import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-@customElement('app-pixi-text')
-export class AppPixiText extends LitElement {
+@customElement('pixi-flex')
+export class PixiFlex extends LitElement {
   static get styles() {
     return css`
-    div {
+    section {
       height: 100%;
       display: flex;
       align-items: stretch;
@@ -23,9 +23,13 @@ export class AppPixiText extends LitElement {
   }
 
   render() {
-    return html`<div><pixi-view></pixi-view></div>`
-  }
-
-  protected firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
+    const headerText = "";
+    const footerText = "";
+    return html`
+    <section>
+      <header>${headerText}</header>
+      <pixi-view></pixi-view>
+      <footer>${footerText}</footer>
+    </section>`;
   }
 }

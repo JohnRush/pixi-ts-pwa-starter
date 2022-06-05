@@ -52,6 +52,6 @@ html, body {
 }
 
 fluent-design-system-provider, app-index {
-  /* display: block; */
-  /* height: 100%; */
+  display: block;
+  height: 100%;
 }
