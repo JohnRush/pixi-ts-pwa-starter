@@ -12,16 +12,17 @@ export function handleResizeComplete(
 ) {
   let id: number | undefined;
 
-  function doWork() {
+  function debounce() {
     clearTimeout(id);
     id = setTimeout(fn, delayMs);
+    console.log({id, delayMs})
   }
 
-  window.addEventListener("resize", doWork);
+  window.addEventListener("resize", debounce);
 
   return {
     dispose() {
-      clearTimeout(id), window.removeEventListener("resize", doWork);
+      clearTimeout(id), window.removeEventListener("resize", debounce);
     },
   };
 }

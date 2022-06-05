@@ -59,12 +59,11 @@ export function textDemo(app: PIXI.Application, stage: PIXI.Container) {
 
   stage.addChild(skewText);
 
+  const {width,height}=app.screen;
+
   const borderPadding = 2;
   const borderThickness = 4;
-  const rect = padRect(
-    makeRect(app.view.width, app.view.height),
-    borderPadding
-  );
+  const rect = padRect(makeRect(width, height), borderPadding);
 
   const border = new PIXI.Graphics()
     .lineStyle({ width: borderThickness, color: 0xff7070, alignment: 0 })
