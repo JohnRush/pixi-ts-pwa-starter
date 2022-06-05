@@ -53,7 +53,7 @@ export class PixiView extends LitElement {
       const height = this.containerHeight();
 
       if(this.lastSize[0] != width || this.lastSize[1] != height) {
-        console.debug("onCanvasResized", {width, height});
+        // console.debug("onCanvasResized", {width, height});
 
         this.lastSize[0] = width;
         this.lastSize[1] = height;

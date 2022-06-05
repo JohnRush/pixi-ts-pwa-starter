@@ -6,6 +6,7 @@ export default defineConfig({
   build: {
     sourcemap: true,
     assetsDir: "code",
+    chunkSizeWarningLimit: 1000
   },
   plugins: [
     VitePWA({

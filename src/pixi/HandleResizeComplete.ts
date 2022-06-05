@@ -15,7 +15,6 @@ export function handleResizeComplete(
   function debounce() {
     clearTimeout(id);
     id = setTimeout(fn, delayMs);
-    console.log({id, delayMs})
   }
 
   window.addEventListener("resize", debounce);
