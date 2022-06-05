@@ -30,11 +30,13 @@ export class PixiView extends LitElement {
       antialias: true,
     });
 
-    this.renderRoot.appendChild(this.app.view);
-
-    this.scene = makeScene(this.app, textDemo);
-
-    this.onContainerResized();
+    window.setTimeout(() => {
+      // Sometimes the canvas is created before the CSS layout is complete.
+      // This is a hack to see if we can avoid that problem
+      this.renderRoot.appendChild(this.app!.view);
+      this.scene = makeScene(this.app!, textDemo);
+      this.onContainerResized();
+    }, 100);
   }
 
   private containerWidth(): number {
