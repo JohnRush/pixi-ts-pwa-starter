@@ -1,6 +1,4 @@
-ManifoldJS
-
-Copyright (c) Microsoft Corporation
+Copyright (c) John Rush
 
 All rights reserved.
 

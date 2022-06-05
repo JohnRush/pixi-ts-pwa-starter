@@ -8,7 +8,8 @@
     "dev-task": "vite",
     "build": "tsc && vite build",
     "start": "npm run build && vite preview",
-    "start-remote": "vite --host"
+    "start-remote": "vite --host",
+    "deploy": "swa deploy"
   },
   "author": "",
   "license": "ISC",

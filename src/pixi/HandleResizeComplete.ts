@@ -17,11 +17,11 @@ export function handleResizeComplete(
     id = setTimeout(fn, delayMs);
   }
 
-  window.addEventListener("resize", debounce);
+  window.addEventListener('resize', debounce);
 
   return {
     dispose() {
-      clearTimeout(id), window.removeEventListener("resize", debounce);
+      clearTimeout(id), window.removeEventListener('resize', debounce);
     },
   };
 }

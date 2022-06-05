@@ -5,17 +5,18 @@ import { customElement } from 'lit/decorators.js';
 export class PixiFlex extends LitElement {
   static get styles() {
     return css`
-    section {
-      height: 100%;
-      display: flex;
-      align-items: stretch;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    pixi-view {
-      flex-grow: 1;
-      min-height: 0;
-    }`;
+      section {
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      pixi-view {
+        flex-grow: 1;
+        min-height: 0;
+      }
+    `;
   }
 
   constructor() {
@@ -23,10 +24,9 @@ export class PixiFlex extends LitElement {
   }
 
   render() {
-    const headerText = "";
-    const footerText = "";
-    return html`
-    <section>
+    const headerText = '';
+    const footerText = '';
+    return html` <section>
       <header>${headerText}</header>
       <pixi-view></pixi-view>
       <footer>${footerText}</footer>
